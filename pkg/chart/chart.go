@@ -70,7 +70,7 @@ func (c *chart) RenderTemplate(opts *TemplateOptions) (Template, error) {
 	if err != nil {
 		return nil, err
 	}
-	e := helmEngine.New(nil)
+	e := helmEngine.Engine{}
 	e.LintMode = false
 	templateYamls, err := e.Render(c.Chart, renderValues)
 	if err != nil {
